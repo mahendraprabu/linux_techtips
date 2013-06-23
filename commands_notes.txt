@@ -1,0 +1,37 @@
+Searching files for a particular text:
+--------------------------------------
+cd to the directory to search
+find *file_name_filter* -exec grep "search_string" '{}' \; -print
+
+Examples:
+find *2013042* -exec grep "89187725" '{}' \; -print
+find *.xml -exec grep "RX601729" '{}' \; -print
+find . -exec grep "17797736" '{}' \; -print
+
+Vertical Comparision of 2 files in vim editor
+----------------------------------------------
+vim File1
+ESC
+:vert diffsplit File2
+
+Solaris VI tips:
+-----------------
+Append: a
+delete char: x
+delete line: dd
+
+Do not use arrow keys in the Entry mode, use the following keys:
+ h    j    k   l    
+left down  up  right
+Instead you can <esc> and then use arrow keys
+
+
+Copy with Time stamp/file attributes preserved
+----------------------------------------------
+cp --preserve=ownership file1.txt /tmp/file1.txt
+cp --preserve=timestamps file1.txt /tmp/file1.txt
+
+The cp command -p option is equivalent to --preserve=mode,ownership,timestamps
+$ cp -p file1.txt /tmp/file1.txt
+All the original attributes (mode,permission,ownership) of file1.txt is preserved.
+
